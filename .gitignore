@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+
+# Environment variables
+.env
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+
+# Reports / outputs (generated files)
+reports/*.csv
+reports/*.json
+
+# Optional: ignore ALL datasets (uncomment if needed)
+# *.csv
+
+# Temporary files
+*.tmp
+*.swp
+
+# Python packaging
+build/
+dist/
+*.egg-info/

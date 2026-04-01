@@ -1,0 +1,13 @@
+# Install core
+-r requirements.txt
+
+# Debugging
+debugpy==1.8.14
+psutil==7.0.0
+
+# Code quality (optional but useful)
+black==24.4.2
+flake8==7.0.0
+
+# Visualization (lightweight)
+matplotlib==3.10.3
