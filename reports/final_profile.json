@@ -1,0 +1,578 @@
+{
+    "__meta__": {
+        "n_rows": 32561,
+        "n_columns": 15,
+        "columns": [
+            "age",
+            "workclass",
+            "fnlwgt",
+            "education",
+            "education.num",
+            "marital.status",
+            "occupation",
+            "relationship",
+            "race",
+            "sex",
+            "capital.gain",
+            "capital.loss",
+            "hours.per.week",
+            "native.country",
+            "income"
+        ]
+    },
+    "age": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 73,
+        "stats": {
+            "mean": 38.58164675532078,
+            "median": 37.0,
+            "std": 13.640432553581343,
+            "min": 17.0,
+            "max": 90.0,
+            "skew": 0.5587433694130483
+        },
+        "outliers": {
+            "count": 143,
+            "lower_bound": -2.0,
+            "upper_bound": 78.0
+        },
+        "anomaly": {
+            "anomaly_count": 143,
+            "anomaly_rate": 0.0044,
+            "indices": [
+                0,
+                1,
+                118,
+                128,
+                199,
+                992,
+                1180,
+                1739,
+                1740,
+                1742,
+                1761,
+                1763,
+                1772,
+                2231,
+                2241,
+                2296,
+                2299,
+                2947,
+                3773,
+                3776
+            ],
+            "method_counts": {
+                "iqr": 143,
+                "mad_z": 43,
+                "iforest": 1553
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": true,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "workclass": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 1836,
+            "missing_pct": 0.05638647461687295
+        },
+        "n_unique": 8,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 8,
+            "top_values": {
+                "Private": 22696,
+                "Self-emp-not-inc": 2541,
+                "Local-gov": 2093,
+                "State-gov": 1298,
+                "Self-emp-inc": 1116
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "fnlwgt": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 21648,
+        "stats": {
+            "mean": 189778.36651208502,
+            "median": 178356.0,
+            "std": 105549.97769702224,
+            "min": 12285.0,
+            "max": 1484705.0,
+            "skew": 1.4469800945789828
+        },
+        "outliers": {
+            "count": 992,
+            "lower_bound": -61009.0,
+            "upper_bound": 415887.0
+        },
+        "anomaly": {
+            "anomaly_count": 992,
+            "anomaly_rate": 0.0305,
+            "indices": [
+                8,
+                101,
+                129,
+                262,
+                305,
+                329,
+                350,
+                417,
+                494,
+                591,
+                592,
+                719,
+                786,
+                796,
+                954,
+                991,
+                1033,
+                1045,
+                1060,
+                1113
+            ],
+            "method_counts": {
+                "iqr": 992,
+                "mad_z": 414,
+                "iforest": 1628
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": true,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "education": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 16,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 16,
+            "top_values": {
+                "HS-grad": 10501,
+                "Some-college": 7291,
+                "Bachelors": 5355,
+                "Masters": 1723,
+                "Assoc-voc": 1382
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "education.num": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 16,
+        "stats": {
+            "mean": 10.0806793403151,
+            "median": 10.0,
+            "std": 2.5727203320673877,
+            "min": 1.0,
+            "max": 16.0,
+            "skew": -0.31167586791022966
+        },
+        "outliers": {
+            "count": 1198,
+            "lower_bound": 4.5,
+            "upper_bound": 16.5
+        },
+        "anomaly": {
+            "anomaly_count": 1611,
+            "anomaly_rate": 0.0495,
+            "indices": [
+                3,
+                7,
+                10,
+                14,
+                26,
+                27,
+                35,
+                38,
+                99,
+                101,
+                113,
+                114,
+                121,
+                129,
+                142,
+                145,
+                161,
+                183,
+                212,
+                216
+            ],
+            "method_counts": {
+                "iqr": 1198,
+                "mad_z": 1611,
+                "iforest": 1541
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "marital.status": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 7,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 7,
+            "top_values": {
+                "Married-civ-spouse": 14976,
+                "Never-married": 10683,
+                "Divorced": 4443,
+                "Separated": 1025,
+                "Widowed": 993
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "occupation": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 1843,
+            "missing_pct": 0.056601455729246644
+        },
+        "n_unique": 14,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 14,
+            "top_values": {
+                "Prof-specialty": 4140,
+                "Craft-repair": 4099,
+                "Exec-managerial": 4066,
+                "Adm-clerical": 3770,
+                "Sales": 3650
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "relationship": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 6,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 6,
+            "top_values": {
+                "Husband": 13193,
+                "Not-in-family": 8305,
+                "Own-child": 5068,
+                "Unmarried": 3446,
+                "Wife": 1568
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "race": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 5,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 5,
+            "top_values": {
+                "White": 27816,
+                "Black": 3124,
+                "Asian-Pac-Islander": 1039,
+                "Amer-Indian-Eskimo": 311,
+                "Other": 271
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "sex": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 2,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 2,
+            "top_values": {
+                "Male": 21790,
+                "Female": 10771
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "capital.gain": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 119,
+        "stats": {
+            "mean": 1077.6488437087312,
+            "median": 0.0,
+            "std": 7385.292084840339,
+            "min": 0.0,
+            "max": 99999.0,
+            "skew": 11.953847687699794
+        },
+        "outliers": {
+            "count": 2712,
+            "lower_bound": 0.0,
+            "upper_bound": 0.0
+        },
+        "anomaly": {
+            "anomaly_count": 0,
+            "anomaly_rate": 0.0,
+            "indices": [],
+            "method_counts": {
+                "iqr": 0,
+                "mad_z": 0,
+                "iforest": 1597
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": true,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "capital.loss": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 92,
+        "stats": {
+            "mean": 87.303829734959,
+            "median": 0.0,
+            "std": 402.96021864899967,
+            "min": 0.0,
+            "max": 4356.0,
+            "skew": 4.594629121679696
+        },
+        "outliers": {
+            "count": 1519,
+            "lower_bound": 0.0,
+            "upper_bound": 0.0
+        },
+        "anomaly": {
+            "anomaly_count": 0,
+            "anomaly_rate": 0.0,
+            "indices": [],
+            "method_counts": {
+                "iqr": 0,
+                "mad_z": 0,
+                "iforest": 1519
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": true,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "hours.per.week": {
+        "type": "numeric",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 94,
+        "stats": {
+            "mean": 40.437455852092995,
+            "median": 40.0,
+            "std": 12.347428681731843,
+            "min": 1.0,
+            "max": 99.0,
+            "skew": 0.227642536804501
+        },
+        "outliers": {
+            "count": 9008,
+            "lower_bound": 32.5,
+            "upper_bound": 52.5
+        },
+        "anomaly": {
+            "anomaly_count": 6001,
+            "anomaly_rate": 0.1843,
+            "indices": [
+                1,
+                7,
+                9,
+                12,
+                16,
+                29,
+                32,
+                35,
+                38,
+                44,
+                45,
+                51,
+                60,
+                62,
+                65,
+                66,
+                68,
+                69,
+                74,
+                75
+            ],
+            "method_counts": {
+                "iqr": 9008,
+                "mad_z": 6001,
+                "iforest": 1447
+            },
+            "active_methods": [
+                "iqr",
+                "mad_z",
+                "iforest"
+            ]
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": true,
+            "has_outliers": true,
+            "potential_id_column": false
+        }
+    },
+    "native.country": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 583,
+            "missing_pct": 0.0179048555019809
+        },
+        "n_unique": 41,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 41,
+            "top_values": {
+                "United-States": 29170,
+                "Mexico": 643,
+                "Philippines": 198,
+                "Germany": 137,
+                "Canada": 121
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    },
+    "income": {
+        "type": "categorical",
+        "missing": {
+            "missing_count": 0,
+            "missing_pct": 0.0
+        },
+        "n_unique": 2,
+        "pattern": "mixed",
+        "stats": {
+            "unique_values": 2,
+            "top_values": {
+                "<=50K": 24720,
+                ">50K": 7841
+            }
+        },
+        "quality_flags": {
+            "high_missing": false,
+            "high_cardinality": false,
+            "has_outliers": false,
+            "potential_id_column": false
+        }
+    }
+}
