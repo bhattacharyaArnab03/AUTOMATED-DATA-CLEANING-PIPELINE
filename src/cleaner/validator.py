@@ -3,8 +3,8 @@ import pandas as pd
 
 class Validator:
 
-    def validate_numeric(self, series):
-        s = pd.to_numeric(series, errors="coerce")
+    def validate_numeric(self, s):
+        s = pd.to_numeric(s, errors="coerce")
 
         q1 = s.quantile(0.25)
         q3 = s.quantile(0.75)
@@ -13,6 +13,4 @@ class Validator:
         lower = q1 - 1.5 * iqr
         upper = q3 + 1.5 * iqr
 
-        validated = s.where((s >= lower) & (s <= upper), pd.NA)
-
-        return validated, lower, upper
+        return s.clip(lower, upper), lower, upper

@@ -1,34 +1,22 @@
-import json
-from typing import Dict, Any, Optional
-
-import pandas as pd
-
 from cleaner.profiler import DataProfiler
 from cleaner.decision_engine import DecisionEngine
 from cleaner.cleaning_executor import CleaningExecutor
 
 
-def run_pipeline_from_df(
-    df: pd.DataFrame,
-    config_path: Optional[str] = None,
-) -> Dict[str, Any]:
-    """
-    Run the complete cleaning pipeline on an in-memory dataframe.
-    Returns all intermediate and final artifacts.
-    """
+def run_pipeline_from_df(df, config_path=None, scale_columns=None):
 
     profiler = DataProfiler()
-    profile_report = profiler.profile(df)
+    profile = profiler.profile(df)
 
     decision_engine = DecisionEngine()
-    decision_report = decision_engine.decide(profile_report)
+    decision = decision_engine.decide(profile)
 
     executor = CleaningExecutor(config_path=config_path)
-    cleaned_df, audit = executor.clean(df, decision_report)
+    cleaned_df, audit = executor.clean(df, scale_columns=scale_columns)
 
     return {
-        "profile_report": profile_report,
-        "decision_report": decision_report,
         "cleaned_df": cleaned_df,
         "audit": audit,
+        "profile_report": profile,
+        "decision_report": decision,
     }

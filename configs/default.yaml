@@ -1,3 +1,14 @@
+missing_tokens:
+  - ""
+  - "na"
+  - "n/a"
+  - "null"
+  - "none"
+  - "nan"
+  - "unknown"
+  - "no info"
+  - "not available"
+
 domain_rules:
   age:
     min: 0
