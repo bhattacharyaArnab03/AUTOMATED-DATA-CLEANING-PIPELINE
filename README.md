@@ -262,7 +262,3 @@ Typical uses:
 ## Acknowledgements / Literature Inspiration
 
 This project builds on ideas from automated preprocessing, workflow optimization, explainable cleaning, anomaly detection, and multi-signal decision systems discussed in the literature survey.
-
-## License
-
-Add your preferred license here if required by your department or repository policy.
