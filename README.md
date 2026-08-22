@@ -186,7 +186,7 @@ python run_pipeline.py --input examples/adult.csv --use-config --scale-column fn
 ### FastAPI mode
 
 ```bash
-uvicorn app.main:app --reload
+python -m uvicorn app.main:app --reload
 ```
 
 Then open:
