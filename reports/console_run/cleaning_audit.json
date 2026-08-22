@@ -1,51 +1,33 @@
 {
   "columns": {
+    "gender": {
+      "action": "label_encoded"
+    },
     "age": {
       "action": "untouched_clean"
     },
-    "workclass": {
+    "hypertension": {
+      "action": "binary_preserved"
+    },
+    "heart_disease": {
+      "action": "binary_preserved"
+    },
+    "smoking_history": {
       "action": "label_encoded"
     },
-    "fnlwgt": {
+    "bmi": {
+      "action": "untouched_clean"
+    },
+    "HbA1c_level": {
+      "action": "untouched_clean"
+    },
+    "blood_glucose_level": {
       "action": "scaled_only",
       "missing_handled": "False",
       "scaled": true
     },
-    "education": {
-      "action": "label_encoded"
-    },
-    "education.num": {
-      "action": "untouched_clean"
-    },
-    "marital.status": {
-      "action": "label_encoded"
-    },
-    "occupation": {
-      "action": "label_encoded"
-    },
-    "relationship": {
-      "action": "label_encoded"
-    },
-    "race": {
-      "action": "label_encoded"
-    },
-    "sex": {
-      "action": "label_encoded"
-    },
-    "capital.gain": {
-      "action": "untouched_clean"
-    },
-    "capital.loss": {
-      "action": "untouched_clean"
-    },
-    "hours.per.week": {
-      "action": "untouched_clean"
-    },
-    "native.country": {
-      "action": "label_encoded"
-    },
-    "income": {
-      "action": "label_encoded"
+    "diabetes": {
+      "action": "binary_preserved"
     }
   }
 }

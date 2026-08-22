@@ -1,305 +1,108 @@
 {
   "__meta__": {
-    "n_rows": 32561,
-    "n_columns": 15,
+    "n_rows": 100000,
+    "n_columns": 9,
     "columns": [
+      "gender",
       "age",
-      "workclass",
-      "fnlwgt",
-      "education",
-      "education.num",
-      "marital.status",
-      "occupation",
-      "relationship",
-      "race",
-      "sex",
-      "capital.gain",
-      "capital.loss",
-      "hours.per.week",
-      "native.country",
-      "income"
+      "hypertension",
+      "heart_disease",
+      "smoking_history",
+      "bmi",
+      "HbA1c_level",
+      "blood_glucose_level",
+      "diabetes"
     ]
   },
   "decisions": {
+    "gender": {
+      "column": "gender",
+      "action": "normalize_and_review",
+      "confidence": 0.9,
+      "signals": {
+        "type": "categorical",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0,
+        "skew": 0.0,
+        "n_unique": 3,
+        "pattern": "mixed"
+      },
+      "fusion_score": 0.1,
+      "reasons": [
+        "format inconsistency detected",
+        "categorical formatting appears inconsistent"
+      ],
+      "parameters": {
+        "normalize": true
+      }
+    },
     "age": {
       "column": "age",
-      "action": "median_impute",
-      "confidence": 0.8898,
+      "action": "keep_numeric",
+      "confidence": 0.9922,
       "signals": {
         "type": "numeric",
         "missing_pct": 0.0,
-        "anomaly_ratio": 0.0044,
-        "skew": 0.5587,
-        "n_unique": 73,
+        "anomaly_ratio": 0.0,
+        "skew": 0.052,
+        "n_unique": 102,
         "pattern": "unknown"
       },
-      "fusion_score": 0.1102,
-      "reasons": [
-        "numeric column needs stabilization"
-      ],
-      "parameters": {
-        "imputer": "median"
-      }
+      "fusion_score": 0.0078,
+      "reasons": [],
+      "parameters": {}
     },
-    "workclass": {
-      "column": "workclass",
+    "hypertension": {
+      "column": "hypertension",
+      "action": "keep_numeric",
+      "confidence": 0.85,
+      "signals": {
+        "type": "numeric",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0,
+        "skew": 3.2313,
+        "n_unique": 2,
+        "pattern": "unknown"
+      },
+      "fusion_score": 0.15,
+      "reasons": [
+        "skew=3.23 suggests robust treatment"
+      ],
+      "parameters": {}
+    },
+    "heart_disease": {
+      "column": "heart_disease",
+      "action": "keep_numeric",
+      "confidence": 0.85,
+      "signals": {
+        "type": "numeric",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0,
+        "skew": 4.7339,
+        "n_unique": 2,
+        "pattern": "unknown"
+      },
+      "fusion_score": 0.15,
+      "reasons": [
+        "skew=4.73 suggests robust treatment"
+      ],
+      "parameters": {}
+    },
+    "smoking_history": {
+      "column": "smoking_history",
       "action": "mode_impute",
-      "confidence": 0.8803,
+      "confidence": 0.7746,
       "signals": {
         "type": "categorical",
-        "missing_pct": 0.0564,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 8,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1197,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical column with manageable cardinality"
-      ],
-      "parameters": {
-        "imputer": "most_frequent"
-      }
-    },
-    "fnlwgt": {
-      "column": "fnlwgt",
-      "action": "median_impute",
-      "confidence": 0.6672,
-      "signals": {
-        "type": "numeric",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0305,
-        "skew": 1.447,
-        "n_unique": 21648,
-        "pattern": "unknown"
-      },
-      "fusion_score": 0.3328,
-      "reasons": [
-        "skew=1.45 suggests robust treatment",
-        "numeric column needs stabilization"
-      ],
-      "parameters": {
-        "imputer": "median"
-      }
-    },
-    "education": {
-      "column": "education",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 16,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
-      ],
-      "parameters": {
-        "normalize": true
-      }
-    },
-    "education.num": {
-      "column": "education.num",
-      "action": "median_impute",
-      "confidence": 0.6564,
-      "signals": {
-        "type": "numeric",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0495,
-        "skew": 0.3117,
-        "n_unique": 16,
-        "pattern": "unknown"
-      },
-      "fusion_score": 0.3436,
-      "reasons": [
-        "numeric column needs stabilization"
-      ],
-      "parameters": {
-        "imputer": "median"
-      }
-    },
-    "marital.status": {
-      "column": "marital.status",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 7,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
-      ],
-      "parameters": {
-        "normalize": true
-      }
-    },
-    "occupation": {
-      "column": "occupation",
-      "action": "mode_impute",
-      "confidence": 0.8802,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0566,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 14,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1198,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical column with manageable cardinality"
-      ],
-      "parameters": {
-        "imputer": "most_frequent"
-      }
-    },
-    "relationship": {
-      "column": "relationship",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 6,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
-      ],
-      "parameters": {
-        "normalize": true
-      }
-    },
-    "race": {
-      "column": "race",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0,
+        "missing_pct": 0.3582,
         "anomaly_ratio": 0.0,
         "skew": 0.0,
         "n_unique": 5,
         "pattern": "mixed"
       },
-      "fusion_score": 0.1,
+      "fusion_score": 0.2254,
       "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
-      ],
-      "parameters": {
-        "normalize": true
-      }
-    },
-    "sex": {
-      "column": "sex",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 2,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1,
-      "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
-      ],
-      "parameters": {
-        "normalize": true
-      }
-    },
-    "capital.gain": {
-      "column": "capital.gain",
-      "action": "keep_numeric",
-      "confidence": 0.85,
-      "signals": {
-        "type": "numeric",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 11.9538,
-        "n_unique": 119,
-        "pattern": "unknown"
-      },
-      "fusion_score": 0.15,
-      "reasons": [
-        "skew=11.95 suggests robust treatment"
-      ],
-      "parameters": {}
-    },
-    "capital.loss": {
-      "column": "capital.loss",
-      "action": "keep_numeric",
-      "confidence": 0.85,
-      "signals": {
-        "type": "numeric",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 4.5946,
-        "n_unique": 92,
-        "pattern": "unknown"
-      },
-      "fusion_score": 0.15,
-      "reasons": [
-        "skew=4.59 suggests robust treatment"
-      ],
-      "parameters": {}
-    },
-    "hours.per.week": {
-      "column": "hours.per.week",
-      "action": "robust_scale",
-      "confidence": 0.6659,
-      "signals": {
-        "type": "numeric",
-        "missing_pct": 0.0,
-        "anomaly_ratio": 0.1843,
-        "skew": 0.2276,
-        "n_unique": 94,
-        "pattern": "unknown"
-      },
-      "fusion_score": 0.3341,
-      "reasons": [
-        "anomaly_ratio=0.18 is high",
-        "anomalies present; robust scaling preferred"
-      ],
-      "parameters": {
-        "scaler": "robust"
-      }
-    },
-    "native.country": {
-      "column": "native.country",
-      "action": "mode_impute",
-      "confidence": 0.8937,
-      "signals": {
-        "type": "categorical",
-        "missing_pct": 0.0179,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 41,
-        "pattern": "mixed"
-      },
-      "fusion_score": 0.1063,
-      "reasons": [
+        "missing_pct=0.36 is high",
         "format inconsistency detected",
         "categorical column with manageable cardinality"
       ],
@@ -307,26 +110,84 @@
         "imputer": "most_frequent"
       }
     },
-    "income": {
-      "column": "income",
-      "action": "normalize_and_review",
-      "confidence": 0.9,
+    "bmi": {
+      "column": "bmi",
+      "action": "median_impute",
+      "confidence": 0.586,
       "signals": {
-        "type": "categorical",
+        "type": "numeric",
         "missing_pct": 0.0,
-        "anomaly_ratio": 0.0,
-        "skew": 0.0,
-        "n_unique": 2,
-        "pattern": "mixed"
+        "anomaly_ratio": 0.044,
+        "skew": 1.0438,
+        "n_unique": 4247,
+        "pattern": "unknown"
       },
-      "fusion_score": 0.1,
+      "fusion_score": 0.414,
       "reasons": [
-        "format inconsistency detected",
-        "categorical formatting appears inconsistent"
+        "skew=1.04 suggests robust treatment",
+        "numeric column needs stabilization"
       ],
       "parameters": {
-        "normalize": true
+        "imputer": "median"
       }
+    },
+    "HbA1c_level": {
+      "column": "HbA1c_level",
+      "action": "median_impute",
+      "confidence": 0.9111,
+      "signals": {
+        "type": "numeric",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0132,
+        "skew": 0.0669,
+        "n_unique": 18,
+        "pattern": "unknown"
+      },
+      "fusion_score": 0.0889,
+      "reasons": [
+        "numeric column needs stabilization"
+      ],
+      "parameters": {
+        "imputer": "median"
+      }
+    },
+    "blood_glucose_level": {
+      "column": "blood_glucose_level",
+      "action": "median_impute",
+      "confidence": 0.7163,
+      "signals": {
+        "type": "numeric",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0267,
+        "skew": 0.8217,
+        "n_unique": 18,
+        "pattern": "unknown"
+      },
+      "fusion_score": 0.2837,
+      "reasons": [
+        "numeric column needs stabilization"
+      ],
+      "parameters": {
+        "imputer": "median"
+      }
+    },
+    "diabetes": {
+      "column": "diabetes",
+      "action": "keep_numeric",
+      "confidence": 0.85,
+      "signals": {
+        "type": "numeric",
+        "missing_pct": 0.0,
+        "anomaly_ratio": 0.0,
+        "skew": 2.9762,
+        "n_unique": 2,
+        "pattern": "unknown"
+      },
+      "fusion_score": 0.15,
+      "reasons": [
+        "skew=2.98 suggests robust treatment"
+      ],
+      "parameters": {}
     }
   }
 }
